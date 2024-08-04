@@ -1,11 +1,40 @@
-const path = require('path')
- 
+const path = require('path');
+
 module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
   images: {
-    domains: ['media.dev.to', 'avatars.githubusercontent.com', 'github-readme-stats.vercel.app', 'github-readme-streak-stats.herokuapp.com', 'stardev.io', 'github-profile-summary-cards.vercel.app', 'github-profile-trophy.vercel.app'],
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'github-profile-summary-cards.vercel.app',
+      },
+      {
+        protocol: 'https',
+        hostname: 'github-readme-stats.vercel.app',
+      },
+      {
+        protocol: 'https',
+        hostname: 'media.dev.to',
+      },
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'github-readme-streak-stats.herokuapp.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'stardev.io',
+      },
+      {
+        protocol: 'https',
+        hostname: 'github-profile-trophy.vercel.app',
+      },
+    ],
     dangerouslyAllowSVG: true,
-  }
-}
+  },
+};
